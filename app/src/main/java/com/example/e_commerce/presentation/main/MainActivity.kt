@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
 
-        //for navigation visible
+//        for navigation visible
 //        navController.addOnDestinationChangedListener{_,destination, _ ->
 //            navigation.isVisible = listOf(
 //                R.id.onboardingFragment,
@@ -93,5 +93,6 @@ class MainActivity : AppCompatActivity() {
 //            Destination.Home -> navController.navigate(MainDirections.toHomeFragment())
 //            Destination.Onboarding -> navController.navigate(MainDirections.toOnboardingFragment())
 //        }
+//    }
     }
 }
