@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private val viewModel by viewModels<MainViewModel>()
+
+
     private  lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,5 +22,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
+
         }
+
+
     }

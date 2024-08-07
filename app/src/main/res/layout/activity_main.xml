@@ -31,11 +31,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/navigation"
         app:layout_constraintWidth_percent="0.85"
-
-
-
         />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
