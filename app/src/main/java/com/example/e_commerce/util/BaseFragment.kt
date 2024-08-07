@@ -13,15 +13,15 @@ abstract class BaseFragment<V : ViewBinding>(
     private val inflate: Inflate<V>,
 ) : Fragment() {
 
-    private lateinit var binding: V
-    val binding get() = binding
+    private lateinit var _binding: V
+    val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = inflate(inflater, container, false)
+        _binding = inflate(inflater, container, false)
         return binding.root
     }
 
