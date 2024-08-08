@@ -11,8 +11,10 @@ fun Fragment.toast(message: Int) {
 fun Fragment.setLightStatusBar(message: Int) {
     Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
 
-
 }
 fun Fragment.setLightStatusBar(){
-    {}
+
+}
+fun Fragment.clearLightStatusBar(){
+
 }
