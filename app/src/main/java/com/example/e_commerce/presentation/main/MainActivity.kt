@@ -94,5 +94,6 @@ class MainActivity : AppCompatActivity() {
 //            Destination.Onboarding -> navController.navigate(MainDirections.toOnboardingFragment())
 //        }
 //    }
+//    }
     }
 }
