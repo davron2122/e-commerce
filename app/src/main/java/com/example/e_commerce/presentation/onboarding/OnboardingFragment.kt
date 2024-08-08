@@ -7,6 +7,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.e_commerce.R
+import com.example.e_commerce.databi.OnboardingAdapter
+
 import com.example.e_commerce.databinding.FragmentOnboardingBinding
 import com.example.e_commerce.util.BaseFragment
 import com.example.e_commerce.util.clearLightStatusBar
@@ -19,6 +21,7 @@ class OnboardingFragment :
     BaseFragment<FragmentOnboardingBinding>(FragmentOnboardingBinding::inflate) {
 
     private val viewModel by viewModels<OnboardingViewModel>()
+
 
     private val adapter = OnboardingAdapter()
 
@@ -46,7 +49,7 @@ class OnboardingFragment :
         next.setOnClickListener {
             if (pager.currentItem == adapter.itemCount - 1) { //oxirgi page bolsa
                 viewModel.onboarded()
-                findNavController().navigate(OnboardingFragment())
+                findNavController().navigate(OnboardingFragment.())
             } else {
                 pager.setCurrentItem(pager.currentItem + 1, true)
             }
