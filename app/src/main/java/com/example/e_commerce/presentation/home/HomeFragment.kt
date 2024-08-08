@@ -15,6 +15,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
      private  val viewModel by viewModels<HomeViewModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        subscribeToLiveData()
+        initUi()
 
 
     }
@@ -23,9 +25,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         //for LightStatusBar
         setLightStatusBar()
 
-        error.retry.setOnClickListener {
-            viewModel.getHome()
-        }
+
     }
 
 }

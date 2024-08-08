@@ -1,4 +1,18 @@
 package com.example.e_commerce.data.api.auth.dto
 
-class AuthResponse {
+import com.google.gson.annotations.SerializedName
+
+data class AuthResponse (
+
+
+    @SerializedName("user")
+    val user : UserDto,
+    @SerializedName("token")
+    val token : String,
+    )
+{
+
 }
+
+
+
