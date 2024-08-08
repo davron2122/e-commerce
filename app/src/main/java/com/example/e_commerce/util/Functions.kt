@@ -13,8 +13,6 @@ fun Fragment.setLightStatusBar(message: Int) {
 
 
 }
-fun Fragment.setLightStatusbar(){
-
-    if (Build.Version.SDK)
+fun Fragment.setLightStatusBar(){
+    {}
 }
-

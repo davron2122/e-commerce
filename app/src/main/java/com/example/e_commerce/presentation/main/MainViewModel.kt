@@ -1,7 +1,5 @@
 package com.example.e_commerce.presentation.main
 
-import android.app.usage.UsageEvents
-import android.provider.CalendarContract.Events
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.ActivityNavigator
@@ -26,14 +24,15 @@ class MainViewModel @Inject constructor(
 
     }
 
-    private fun getDestination()= viewModelScope.launch(Dispatchers.IO){
+    private fun getDestination() = viewModelScope.launch(Dispatchers.IO) {
         authRepository.destinationFlow().collectLatest {
-        events.postValue(Event.NavigateTo(it))
+            events.postValue(Event.NavigateTo(it))
+        }
+        //we we create the connection
     }
-}
 
-sealed class Event {
-    data class NavigateTo(val destination: ActivityNavigator.Destination) : Event()
-}
+    sealed class Event {
+        data class NavigateTo(val destination: ActivityNavigator.Destination) : Event()
+    }
 }
 

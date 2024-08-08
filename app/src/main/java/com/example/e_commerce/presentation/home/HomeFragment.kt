@@ -12,10 +12,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
 
-     private  val viewModel by viewModels<HomeViewModel>()
+    private val viewModel by viewModels<HomeViewModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        subscribeToLiveData()
+
         initUi()
 
 

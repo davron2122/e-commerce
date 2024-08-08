@@ -67,7 +67,7 @@ dependencies {
     implementation libs.hilt.android
     kapt libs.hilt.compiler
 
-    //viewPagerIndicatorsingIn
+    //viewPagerIndicator Sign In
     implementation libs.viewpagerindicator
 
     //glide
