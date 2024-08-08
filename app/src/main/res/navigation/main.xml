@@ -8,7 +8,18 @@
         android:id="@+id/onboardingFragment"
         android:name="com.example.e_commerce.presentation.onboarding.OnboardingFragment"
         android:label="fragment_onboarding"
-        tools:layout="@layout/fragment_onboarding"/>
+        tools:layout="@layout/fragment_onboarding">
+
+        <action
+            android:id="@+id/to_signInFragment"
+            app:destination="@id/signInFragment" />
+
+    </fragment>
+
+
+
+
+
 
 
 
