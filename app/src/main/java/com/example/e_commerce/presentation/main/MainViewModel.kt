@@ -3,6 +3,7 @@ package com.example.e_commerce.presentation.main
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.ActivityNavigator
+import com.example.e_commerce.domain.model.Destination
 import com.example.e_commerce.domain.repo.AuthRepository
 import com.example.e_commerce.util.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -32,7 +33,7 @@ class MainViewModel @Inject constructor(
     }
 
     sealed class Event {
-        data class NavigateTo(val destination: ActivityNavigator.Destination) : Event()
+        data class NavigateTo(val destination: Destination) : Event()
     }
 }
 

@@ -10,6 +10,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.forEachIndexed
+import androidx.core.view.isVisible
 
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -18,6 +19,7 @@ import com.example.e_commerce.R
 
 
 import com.example.e_commerce.databinding.ActivityMainBinding
+import com.example.e_commerce.domain.model.Destination
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -34,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        initUi()
+        subscribeToLiveData()
 
 
     }
@@ -66,34 +71,33 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
 
-//        for navigation visible
-//        navController.addOnDestinationChangedListener{_,destination, _ ->
-//            navigation.isVisible = listOf(
-//                R.id.onboardingFragment,
-//                R.id.signInFragment,
-//                R.id.signUpFragment,
-//                R.id.detailFragment,
-//            ).all{it != destination.id}
-//        }
-//    }
-//
-//    private fun subscribeToLiveData() {
-//        viewModel.events.observe(this) {
-//            when (it) {
-//                is MainViewModel.Event.NavigateTo -> navigateTo(it.destination)
-//            }
-//        }
-//    }
-//
-//    private fun navigateTo(destination: Destination) {
-//        if (navController.currentDestination?.id == R.id.detailFragment) return
-//        when (destination) {
-//
-//            Destination.Auth -> navController.navigate(MainDirections.tooSignInFragment())
-//            Destination.Home -> navController.navigate(MainDirections.toHomeFragment())
-//            Destination.Onboarding -> navController.navigate(MainDirections.toOnboardingFragment())
-//        }
-//    }
-//    }
+        //for navigation visible
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            navigation.isVisible = listOf(
+                R.id.onboardingFragment,
+                R.id.signInFragment,
+                R.id.signUpFragment,
+                //     R.id.detailFragment,
+            ).all { it != destination.id }
+        }
+    }
+
+    private fun subscribeToLiveData() {
+        viewModel.events.observe(this) {
+            when (it) {
+                is MainViewModel.Event.NavigateTo -> navigateTo(it.destination)
+            }
+        }
+    }
+
+
+    private fun navigateTo(destination: Destination) {
+        if (navController.currentDestination?.id == R.id.detailFragment) return
+        when (destination) {
+
+            Destination.Auth -> navController.navigate(MainDirections.tooSignInFragment())
+            Destination.Home -> navController.navigate(MainDirections.toHomeFragment())
+            Destination.Onboarding -> navController.navigate(MainDirections.toOnboardingFragment())
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.e_commerce.databi
+package com.example.e_commerce.presentation.onboarding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -43,7 +43,6 @@ class OnboardingAdapter : RecyclerView.Adapter<OnboardingAdapter.ViewHolder>() {
                 R.drawable.onboarding_image_1,
                 R.string.onboarding_title_1,
                 R.string.onboarding_description_1
-
 
             )
         )

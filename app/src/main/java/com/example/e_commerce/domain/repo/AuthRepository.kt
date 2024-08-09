@@ -1,6 +1,6 @@
 package com.example.e_commerce.domain.repo
 
-import androidx.navigation.ActivityNavigator
+import com.example.e_commerce.domain.model.Destination
 import kotlinx.coroutines.flow.Flow
 
 
@@ -15,7 +15,7 @@ interface AuthRepository {
     suspend fun signUp(username: String, email: String, password: String)
 
 
-    fun destinationFlow(): Flow<ActivityNavigator.Destination> //for destination
+    fun destinationFlow(): Flow<Destination> //for destination
     suspend fun onboarded()
 
 }

@@ -7,7 +7,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.e_commerce.R
-import com.example.e_commerce.databi.OnboardingAdapter
 
 import com.example.e_commerce.databinding.FragmentOnboardingBinding
 import com.example.e_commerce.util.BaseFragment
@@ -21,12 +20,9 @@ class OnboardingFragment :
     BaseFragment<FragmentOnboardingBinding>(FragmentOnboardingBinding::inflate) {
 
     private val viewModel by viewModels<OnboardingViewModel>()
-
-
     private val adapter = OnboardingAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         initUi()
 
     }
@@ -46,10 +42,33 @@ class OnboardingFragment :
             setPageSize(adapter.itemCount)
             notifyDataChanged()
         }
+
+        pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageScrolled(
+                //callback
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int,
+            ) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                indicatorView.onPageScrolled(position, positionOffset, positionOffsetPixels)
+            }
+
+            override fun onPageSelected(position: Int) { //callback
+                super.onPageSelected(position)
+                indicatorView.onPageSelected(position)
+                next.text = if (position == adapter.itemCount - 1) { //-1 oxirgi page
+                    getString(R.string.fragment_onboarding_get_started)
+                } else {
+                    getString(R.string.fragment_onboarding_next)
+                }
+            }
+        })
+
         next.setOnClickListener {
-            if (pager.currentItem == adapter.itemCount - 1) { //oxirgi page bolsa
+            if (pager.currentItem == adapter.itemCount - 1) { //
                 viewModel.onboarded()
-                findNavController().navigate(OnboardingFragment.())
+                findNavController().navigate(On)
             } else {
                 pager.setCurrentItem(pager.currentItem + 1, true)
             }

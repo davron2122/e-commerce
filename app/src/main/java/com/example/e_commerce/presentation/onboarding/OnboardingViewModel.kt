@@ -13,5 +13,7 @@ class OnboardingViewModel @Inject constructor(
 
 ) : ViewModel() {
 
-    fun onboarded() = viewModelScope.launch { authRepository.onboarded() }
+    fun onboarded() = viewModelScope.launch {
+
+        authRepository.onboarded() }
 }

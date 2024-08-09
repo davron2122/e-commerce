@@ -9,5 +9,4 @@ data class User(
     val lastName: String?
 
 
-
 )
