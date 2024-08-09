@@ -23,6 +23,7 @@ pagingRuntimeKtx = "3.3.1"
 retrofit = "2.9.0"
 swiperefreshlayout = "1.1.0"
 viewpagerindicator = "1.2.3"
+playServicesAnalyticsImpl = "18.1.0"
 
 [libraries]
 androidx-appcompat-v161 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -50,6 +51,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 material-v1110 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 viewpagerindicator = { module = "com.github.zhpanvip:viewpagerindicator", version.ref = "viewpagerindicator" }
+play-services-analytics-impl = { group = "com.google.android.gms", name = "play-services-analytics-impl", version.ref = "playServicesAnalyticsImpl" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

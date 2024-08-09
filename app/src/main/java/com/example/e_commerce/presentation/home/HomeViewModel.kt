@@ -2,6 +2,7 @@ package com.example.e_commerce.presentation.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.google.android.gms.analytics.ecommerce.Product
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,16 +15,20 @@ class HomeViewModel @Inject constructor(){
     val home = MutableLiveData<HomeResponse?>(null)
     init {
         getHome()
+
     }
 
     fun getHome() = viewModelScope.launch {
+
         loading.postValue(true)
         error.postValue(false)
+
         try {
             val response = productRepository.getHome()
             home.postValue(response)
         }catch (e:Exception){
             error.postValue(true)
+
         }finally {
             loading.postValue(false)
         }

@@ -29,6 +29,28 @@
             app:destination="@id/signInFragment" />
 
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.e_commerce.presentation.home.HomeFragment"
+        android:label="homeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+
+        <action
+            android:id="@+id/to_productsFragment"
+            app:destination="@+id/productsFragment" />
+
+        <action
+            android:id="@+id/to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 
 
 
