@@ -16,11 +16,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class SignInViewModel @Inject constructor(
-
-    private val authRepository: AuthRepository
-
-
+class SignInViewModel @Inject constructor( private val authRepository: AuthRepository
 ) : ViewModel() {
     val loading = MutableLiveData(false)
     val events = SingleLiveEvent<Events>()

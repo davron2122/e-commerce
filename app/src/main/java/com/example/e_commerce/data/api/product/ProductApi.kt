@@ -1,0 +1,28 @@
+package com.example.e_commerce.data.api.product
+
+import com.example.e_commerce.data.api.product.dto.Category
+import com.google.android.gms.analytics.ecommerce.Product
+import retrofit2.http.GET
+import retrofit2.http.Query
+
+interface ProductApi {
+
+    @GET("categories")
+    suspend fun getCategories(): List<Category>
+
+    @GET("products")
+    suspend fun getProducts(
+        @Query("category_id") categoryId: String?,
+        @Query("search") search: String?,
+        @Query("page") page: Int,
+        @Query("size") size: Int,
+        @Query("from") from: Float?,
+        @Query("to") to: Float?,
+        @Query("favorite") favorite: Boolean,
+        @Query("rating") rating: Int?,
+        @Query("discount") discount: Int?,
+        @Query("sort") sort: String?
+    ): List<Product>
+
+
+}
