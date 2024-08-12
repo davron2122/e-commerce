@@ -2,6 +2,7 @@ package com.example.e_commerce.presentation.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.ViewModel
 import com.google.android.gms.analytics.ecommerce.Product
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
