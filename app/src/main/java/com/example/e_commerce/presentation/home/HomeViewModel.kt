@@ -12,7 +12,6 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(){
     val loading = MutableLiveData(false)
     val error = MutableLiveData(false)
-    val home = MutableLiveData<HomeResponse?>(null)
     init {
         getHome()
 

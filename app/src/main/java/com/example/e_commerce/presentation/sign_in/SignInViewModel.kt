@@ -17,4 +17,6 @@ class SignInViewModel @Inject constructor(
 ) : ViewModel() {
     val loading = MutableLiveData(false)
     val events = SingleLiveEvent<Events>()
+
+    //
 }

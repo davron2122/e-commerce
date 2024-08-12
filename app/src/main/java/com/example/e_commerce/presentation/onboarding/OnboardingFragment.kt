@@ -24,8 +24,8 @@ class OnboardingFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initUi()
-
     }
+
 
     private fun initUi() = with(binding) {
 
