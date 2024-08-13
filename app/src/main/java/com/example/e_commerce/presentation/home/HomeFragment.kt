@@ -16,7 +16,7 @@ import com.example.e_commerce.util.setLightStatusBar
 import com.zhpan.indicator.enums.IndicatorSlideMode
 import com.zhpan.indicator.enums.IndicatorStyle
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.math.abs
+
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -28,8 +28,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
      subscribeToLiveData()
         initUi()
-
-
     }
     private fun initUi() = with(binding) {
         //for LightStatusBar
