@@ -51,8 +51,4 @@
             android:id="@+id/to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
-
-
-
-
 </navigation>

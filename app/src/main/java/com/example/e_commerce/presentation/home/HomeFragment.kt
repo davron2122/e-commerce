@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.e_commerce.R
 import com.example.e_commerce.databinding.FragmentHomeBinding
 import com.example.e_commerce.util.BaseFragment
+import com.example.e_commerce.util.HorizontalMarginItemDecoration
 import com.example.e_commerce.util.setLightStatusBar
 import com.zhpan.indicator.enums.IndicatorSlideMode
 import com.zhpan.indicator.enums.IndicatorStyle
@@ -33,7 +34,51 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private fun initUi() = with(binding) {
         //for LightStatusBar
         setLightStatusBar()
+        error.retry.setOnClickListener {
+            viewModel.getHome()
+
     }
+        indicator.apply {
+            val normalColor = ContextCompat.getColor(requireContext(), R.color.indicator_unchecked)
+            val checkedColor = ContextCompat.getColor(requireContext(), R.color.indicator_checked)
+            setSliderColor(normalColor, checkedColor)
+            setSliderWidth(resources.getDimension(R.dimen.dp_20))
+            setSliderHeight(resources.getDimension(R.dimen.dp_4))
+            setSlideMode(IndicatorSlideMode.WORM)
+            setIndicatorStyle(IndicatorStyle.ROUND_RECT)
+            notifyDataChanged()
+        }
+        banners.offscreenPageLimit = 1
+
+        val nextItemVisiblePx = resources.getDimension(R.dimen.viewpager_next_item_visible)
+        val currentItemHorizontalMarginPx = resources.getDimension(R.dimen.viewpager_current_item_horizontal_margin)
+        val pageTranslationX = nextItemVisiblePx + currentItemHorizontalMarginPx
+        val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
+            page.translationX = -pageTranslationX * position
+            page.scaleY = 1 - (0.25f * kotlin.math.abs(position))
+
+        }
+        banners.setPageTransformer(pageTransformer)
+
+        val itemDecoration = HorizontalMarginItemDecoration(
+            requireContext(),
+            R.dimen.viewpager_current_item_horizontal_margin
+        )
+        banners.addItemDecoration(itemDecoration)
+
+        showAll.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.toCategoriesFragment())
+        }
+
+        // When the view gains focus (i.e., when the user taps on it to enter text), it triggers
+        // a navigation event to move to the SearchFragment
+        searchContainer.search.setOnFocusChangeListener { view, focused ->
+            if (focused.not()) return@setOnFocusChangeListener
+            findNavController().navigate(HomeFragmentDirections.toSearchFragment())
+        }
+
+    }
+
     private fun subscribeToLiveData() = with(binding) {
         viewModel.loading.observe(viewLifecycleOwner) {
             loading.root.isVisible = it
@@ -56,8 +101,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 setPageSize(it.banners.size)
                 notifyDataChanged()
             }
-
-
+        }
+    }
 
 }
 
