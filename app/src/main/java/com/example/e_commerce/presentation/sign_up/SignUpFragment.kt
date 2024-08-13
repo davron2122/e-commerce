@@ -7,7 +7,11 @@ import androidx.core.view.isVisible
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.e_commerce.R
+import com.example.e_commerce.databinding.FragmentSignUpBinding
 import com.example.e_commerce.util.BaseFragment
+import com.example.e_commerce.util.clearLightStatusBar
+import com.example.e_commerce.util.toast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
