@@ -3,6 +3,7 @@ package com.example.e_commerce.presentation.home
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.e_commerce.data.api.product.dto.HomeResponse
 import com.example.e_commerce.domain.repo.ProductRepository
 import com.google.android.gms.analytics.ecommerce.Product
 
@@ -14,9 +15,10 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val productRepository: ProductRepository
-): ViewModel{
+): ViewModel(){
     val loading = MutableLiveData(false)
     val error = MutableLiveData(false)
+    val home =MutableLiveData<HomeResponse?>(null)
     init {
         getHome()
 
