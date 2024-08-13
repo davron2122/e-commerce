@@ -51,9 +51,10 @@
             android:id="@+id/to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/productsFragment"
-        android:name="com.oybekdev.e_commerce.presentation.products.ProductsFragment"
         android:label="ProductsFragment"
         tools:layout="@layout/fragment_products">
 
@@ -71,7 +72,6 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.oybekdev.e_commerce.presentation.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search">
 
@@ -96,7 +96,6 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.oybekdev.e_commerce.presentation.sign_up.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
 
@@ -126,7 +125,6 @@
 
     <fragment
         android:id="@+id/filterFragment"
-        android:name="com.oybekdev.e_commerce.presentation.filter.FilterFragment"
         android:label="FilterFragment"
         tools:layout="@layout/fragment_filter">
 
@@ -137,7 +135,6 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.oybekdev.e_commerce.presentation.detail.DetailFragment"
         android:label="DetailFragment"
         tools:layout="@layout/fragment_detail">
 
@@ -157,14 +154,12 @@
 
     <fragment
         android:id="@+id/ordersFragment"
-        android:name="com.oybekdev.e_commerce.presentation.orders.OrdersFragment"
         android:label="OrdersFragment"
         tools:layout="@layout/fragment_orders" />
 
 
     <fragment
         android:id="@+id/cardFragment"
-        android:name="com.oybekdev.e_commerce.presentation.card.CardFragment"
         android:label="CardFragment"
         tools:layout="@layout/fragment_cart">
 
@@ -175,7 +170,6 @@
 
     <fragment
         android:id="@+id/wishlistFragment"
-        android:name="com.oybekdev.e_commerce.presentation.wishlist.WishlistFragment"
         android:label="WishlistFragment"
         tools:layout="@layout/fragment_wishlist">
 
@@ -196,7 +190,7 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.oybekdev.e_commerce.presentation.profile.ProfileFragment"
+
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile" />
 </navigation>

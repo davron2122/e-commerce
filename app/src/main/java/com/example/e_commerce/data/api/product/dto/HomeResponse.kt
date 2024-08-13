@@ -13,4 +13,5 @@ data class HomeResponse(
     val user: UserDto,
     @SerializedName("notification_count")
     val notificationCount:Int
+
 )

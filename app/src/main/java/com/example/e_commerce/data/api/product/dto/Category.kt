@@ -5,8 +5,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Category(
-
-
     val count : Int,
     val id : String,
     val image : String,

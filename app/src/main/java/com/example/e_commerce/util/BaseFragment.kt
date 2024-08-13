@@ -24,6 +24,7 @@ abstract class BaseFragment<V : ViewBinding>(
     ): View? {
         _binding = inflate(inflater, container, false)
         return binding.root
+
     }
 
 }

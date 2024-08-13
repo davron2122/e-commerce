@@ -4,8 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.e_commerce.data.api.product.dto.HomeResponse
+import com.example.e_commerce.data.api.product.dto.Product
 import com.example.e_commerce.domain.repo.ProductRepository
-import com.google.android.gms.analytics.ecommerce.Product
+
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

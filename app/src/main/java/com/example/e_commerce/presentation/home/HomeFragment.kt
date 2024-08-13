@@ -1,5 +1,6 @@
 package com.example.e_commerce.presentation.home
 
+
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -10,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.example.e_commerce.R
 import com.example.e_commerce.databinding.FragmentHomeBinding
+import com.example.e_commerce.presentation.home.adapter.BannerAdapter
 import com.example.e_commerce.util.BaseFragment
 import com.example.e_commerce.util.HorizontalMarginItemDecoration
 import com.example.e_commerce.util.setLightStatusBar
@@ -20,22 +22,22 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
-
     private val viewModel by viewModels<HomeViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-     subscribeToLiveData()
+        subscribeToLiveData()
         initUi()
     }
+
     private fun initUi() = with(binding) {
         //for LightStatusBar
         setLightStatusBar()
         error.retry.setOnClickListener {
             viewModel.getHome()
 
-    }
+        }
         indicator.apply {
             val normalColor = ContextCompat.getColor(requireContext(), R.color.indicator_unchecked)
             val checkedColor = ContextCompat.getColor(requireContext(), R.color.indicator_checked)
@@ -49,7 +51,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         banners.offscreenPageLimit = 1
 
         val nextItemVisiblePx = resources.getDimension(R.dimen.viewpager_next_item_visible)
-        val currentItemHorizontalMarginPx = resources.getDimension(R.dimen.viewpager_current_item_horizontal_margin)
+        val currentItemHorizontalMarginPx =
+            resources.getDimension(R.dimen.viewpager_current_item_horizontal_margin)
         val pageTranslationX = nextItemVisiblePx + currentItemHorizontalMarginPx
         val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
             page.translationX = -pageTranslationX * position
@@ -65,14 +68,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         banners.addItemDecoration(itemDecoration)
 
         showAll.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.toCategoriesFragment())
+            findNavController().navigate(HomeFragmentDirections)
         }
 
         // When the view gains focus (i.e., when the user taps on it to enter text), it triggers
         // a navigation event to move to the SearchFragment
         searchContainer.search.setOnFocusChangeListener { view, focused ->
             if (focused.not()) return@setOnFocusChangeListener
-            findNavController().navigate(HomeFragmentDirections.toSearchFragment())
+            findNavController().navigate(HomeFragment.toSearchFragment())
         }
 
     }
@@ -93,6 +96,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             greeting.text = getString(R.string.fragment_home_greeting, name)
             Glide.with(root).load(it.user.avatar).into(avatar)
 
+            //when we create the the fragment it can take the several steps
+
             banners.adapter = BannerAdapter(it.banners, this@HomeFragment::onBannerClick)
             indicator.setupWithViewPager(banners)
             indicator.apply {
@@ -100,6 +105,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 notifyDataChanged()
             }
         }
+
     }
 
 }

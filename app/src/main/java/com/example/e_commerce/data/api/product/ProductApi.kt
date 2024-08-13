@@ -1,6 +1,7 @@
 package com.example.e_commerce.data.api.product
 
 import com.example.e_commerce.data.api.product.dto.Category
+import com.example.e_commerce.data.api.product.dto.Detail
 import com.google.android.gms.analytics.ecommerce.Product
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -28,7 +29,7 @@ interface ProductApi {
     @GET("products/{id}")
     suspend fun getProduct(
         @Path("id") id:String
-    ):Detail
+    ): Detail
 
     @GET("products/{id}/toggle-wishlist")
     suspend fun toggleWishlist(

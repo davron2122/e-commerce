@@ -9,8 +9,6 @@ import java.util.concurrent.atomic.AtomicBoolean
 class SingleLiveEvent<T> : MutableLiveData<T>() {
     companion object {
         private const val TAG = "SingleEvent"
-
-
     }
 
     val mPending: AtomicBoolean = AtomicBoolean(false)
@@ -27,8 +25,8 @@ class SingleLiveEvent<T> : MutableLiveData<T>() {
             }
         }
 
-
     }
+
     @MainThread
     override fun setValue(value: T?) {
         mPending.set(true)

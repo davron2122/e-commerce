@@ -21,5 +21,4 @@ data class Detail(
     @SerializedName("free_delivery")
     val freeDelivery:Boolean
 
-
 )
