@@ -51,4 +51,152 @@
             android:id="@+id/to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.oybekdev.e_commerce.presentation.products.ProductsFragment"
+        android:label="ProductsFragment"
+        tools:layout="@layout/fragment_products">
+
+        <argument
+            android:name="category"
+            app:argType="com.oybekdev.e_commerce.data.api.product.dto.Category" />
+
+        <action
+            android:id="@+id/to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.oybekdev.e_commerce.presentation.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+
+        <argument
+            android:name="category"
+            android:defaultValue="@null"
+            app:argType="com.oybekdev.e_commerce.data.api.product.dto.Category"
+            app:nullable="true" />
+
+        <argument
+            android:name="wishlist"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.oybekdev.e_commerce.presentation.sign_up.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+
+
+        <action
+            android:id="@id/signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <action
+        android:id="@+id/to_onboardingFragment"
+        app:destination="@id/onboardingFragment"
+        app:popUpTo="@id/main" />
+
+    <action
+        android:id="@+id/too_signInFragment"
+        app:destination="@id/signInFragment"
+        app:popUpTo="@id/main" />
+
+    <action
+        android:id="@+id/to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/main" />
+
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.oybekdev.e_commerce.presentation.filter.FilterFragment"
+        android:label="FilterFragment"
+        tools:layout="@layout/fragment_filter">
+
+        <argument
+            android:name="filter"
+            app:argType="com.oybekdev.e_commerce.domain.model.ProductQuery" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.oybekdev.e_commerce.presentation.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+
+        <deepLink
+            android:autoVerify="true"
+            app:uri="https://9d690745-ea7d-4b3d-a54d-a14e4a2c9ffb.mock.pstmn.io/products/{id}" />
+
+
+        <argument
+            android:name="id"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.oybekdev.e_commerce.presentation.orders.OrdersFragment"
+        android:label="OrdersFragment"
+        tools:layout="@layout/fragment_orders" />
+
+
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.oybekdev.e_commerce.presentation.card.CardFragment"
+        android:label="CardFragment"
+        tools:layout="@layout/fragment_cart">
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="com.oybekdev.e_commerce.presentation.wishlist.WishlistFragment"
+        android:label="WishlistFragment"
+        tools:layout="@layout/fragment_wishlist">
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/to_searchFragment"
+            app:destination="@+id/searchFragment">
+
+            <argument
+                android:name="wishlist"
+                android:defaultValue="true"
+                app:argType="boolean" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.oybekdev.e_commerce.presentation.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
