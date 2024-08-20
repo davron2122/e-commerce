@@ -33,13 +33,9 @@ class SingleLiveEvent<T> : MutableLiveData<T>() {
         super.setValue(value)
     }
 
-
-    //we are
     @MainThread
     fun call() {
         value = null
 
     }
-
-
 }

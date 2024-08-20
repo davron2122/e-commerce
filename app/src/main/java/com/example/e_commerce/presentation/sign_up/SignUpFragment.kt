@@ -17,6 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding::inflate) {
 
+    j
+
     private val viewModel by viewModels<SignUpViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -57,7 +59,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
         }
 
         singIn.setOnClickListener {
-            findNavController().navigate(SignUpFragmentDirections.signInFragment())
+            findNavController().navigate(.signInFragment())
         }
     }
 }
