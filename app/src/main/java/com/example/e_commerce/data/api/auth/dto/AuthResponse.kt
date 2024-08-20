@@ -9,10 +9,11 @@ data class AuthResponse (
     val user : UserDto,
     @SerializedName("token")
     val token : String,
-    )
-{
 
-}
+    )
+
+
+
 
 
 

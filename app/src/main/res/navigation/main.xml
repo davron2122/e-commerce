@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.e_commerce.presentation.sign_in.SignInFragment"
+        android:name="com.example.e_commerce.presentation.sign_up.SignUpFragment"
         android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in">
 
@@ -20,18 +20,18 @@
 
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="com.example.e_commerce.presentation.onboarding.OnboardingFragment"
+     android:name="com.example.e_commerce.presentation.onboarding.OnboardingFragment"
         android:label="fragment_onboarding"
         tools:layout="@layout/fragment_onboarding">
+
 
         <action
             android:id="@+id/to_signInFragment"
             app:destination="@id/signInFragment" />
-
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.e_commerce.presentation.home.HomeFragment"
+   android:name="com.example.e_commerce.presentation.home.HomeFragment"
         android:label="homeFragment"
         tools:layout="@layout/fragment_home">
 
@@ -52,9 +52,23 @@
             app:destination="@id/detailFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/categoriesFragment"
+     android:name=""
+        android:label="CategoriesFragment"
+        tools:layout="@layout/fragment_categories">
+
+        <action
+            android:id="@+id/to_productsFragment"
+            app:destination="@+id/productsFragment" />
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/productsFragment"
+        android:name="Pro"
         android:label="ProductsFragment"
         tools:layout="@layout/fragment_products">
 
@@ -72,6 +86,7 @@
 
     <fragment
         android:id="@+id/searchFragment"
+ android:name="com.example.e_commerce.presentation.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search">
 
@@ -96,6 +111,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
+     android:name="com.example.e_commerce.presentation.sign_up.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
 
@@ -130,7 +146,7 @@
 
         <argument
             android:name="filter"
-            app:argType="com.oybekdev.e_commerce.domain.model.ProductQuery" />
+           app:argType="com.example.e_commerce.domain.model.ProductQuery" />
     </fragment>
 
     <fragment
@@ -190,7 +206,6 @@
 
     <fragment
         android:id="@+id/profileFragment"
-
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile" />
 </navigation>

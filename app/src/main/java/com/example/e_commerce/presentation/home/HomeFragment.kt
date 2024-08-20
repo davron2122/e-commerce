@@ -22,6 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+
     private val viewModel by viewModels<HomeViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,6 +35,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private fun initUi() = with(binding) {
         //for LightStatusBar
         setLightStatusBar()
+
         error.retry.setOnClickListener {
             viewModel.getHome()
 
@@ -77,6 +79,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             if (focused.not()) return@setOnFocusChangeListener
             findNavController().navigate(HomeFragment.toSearchFragment())
         }
+        // findNaviController is for navigating the HMI
 
     }
 
@@ -105,6 +108,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 notifyDataChanged()
             }
         }
+
+    }
+
+    private fun onBannerClick(banner: BannerOnclick) {
 
     }
 

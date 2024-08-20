@@ -21,4 +21,6 @@ interface ProductRepository {
     suspend fun getProduct(id:String): Detail
     suspend fun toggleWishlist(productId:String, wishlist:Boolean)
 
+
+
 }

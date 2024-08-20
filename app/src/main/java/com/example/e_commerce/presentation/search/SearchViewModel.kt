@@ -30,13 +30,13 @@ class SearchViewModel @Inject constructor(
 
     //It keeps coming when we change it in the store
 
-
+    init {
+        getRecents()
+    }
     private fun getProducts() = viewModelScope.launch {
         productRepository.getProducts(query.value!!).cachedIn(viewModelScope).collect {
             products.postValue(it)
         }
-
-
     }
 
     fun setInitials(category: Category?, wishlist: Boolean) {
@@ -73,16 +73,11 @@ class SearchViewModel @Inject constructor(
         productRepository.addRecents(search)
     }
 
+    // resolving a this creating
+
     fun setQuery(query: ProductQuery) {
         this.query.postValue(query)
         getProducts()
 
-
     }
 }
-
-
-
-
-
-

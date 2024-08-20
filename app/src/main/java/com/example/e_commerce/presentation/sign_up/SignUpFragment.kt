@@ -1,10 +1,8 @@
 package com.example.e_commerce.presentation.sign_up
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import androidx.core.view.isVisible
-
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.e_commerce.R
@@ -41,6 +39,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
                 SignUpViewModel.Event.NavigateToHome -> toast(R.string.app_name)
             }
         }
+
+        // we would prefer not to use them because of the world authentis ification and
     }
 
     private fun initUi() = with(binding) {
@@ -54,8 +54,10 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
                 password.text.toString()
             )
         }
-
-
+        singIn.setOnClickListener {
+            findNavController().navigate()
         }
+
+
     }
 }
