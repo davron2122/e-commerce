@@ -8,6 +8,7 @@ import kotlinx.parcelize.Parcelize
  data class ProductQuery(
      val category :Category?=null,
      val search : String?= null,
+     val range: Pair<Float, Float> = 0f to 10000f,
      val rating: Int? = null,
      val discount: Int? = null,
      val sort: List<Sort> = emptyList(),
