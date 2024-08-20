@@ -24,6 +24,7 @@ retrofit = "2.9.0"
 swiperefreshlayout = "1.1.0"
 viewpagerindicator = "1.2.3"
 playServicesAnalyticsImpl = "18.1.0"
+lifecycleViewmodelAndroid = "2.8.4"
 
 [libraries]
 androidx-appcompat-v161 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -52,6 +53,7 @@ material-v1110 = { module = "com.google.android.material:material", version.ref 
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 viewpagerindicator = { module = "com.github.zhpanvip:viewpagerindicator", version.ref = "viewpagerindicator" }
 play-services-analytics-impl = { group = "com.google.android.gms", name = "play-services-analytics-impl", version.ref = "playServicesAnalyticsImpl" }
+androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

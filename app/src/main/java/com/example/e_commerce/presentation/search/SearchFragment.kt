@@ -30,7 +30,11 @@ class SearchFragment  : BaseFragment<FragmentSearchBinding>(FragmentSearchBindin
 
     }
 
-    private fun subscribeToLiveData ()= with (binding)
+    private fun subscribeToLiveData ()= with (binding){
+        viewModel.loading.observe(viewLifecycleOwner){
+
+        }
+    }
 
 
 }

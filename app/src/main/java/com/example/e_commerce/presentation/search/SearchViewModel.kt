@@ -30,9 +30,6 @@ class SearchViewModel @Inject constructor(
 
     //It keeps coming when we change it in the store
 
-    init {
-        recents()
-    }
 
     private fun getProducts() = viewModelScope.launch {
         productRepository.getProducts(query.value!!).cachedIn(viewModelScope).collect {
@@ -52,12 +49,14 @@ class SearchViewModel @Inject constructor(
         addRecent(search)
         getProducts()
     }
+
     //CombinedLoadStates object as parameter, representing the combined loading states of different data sources.
     fun setLoadsState(states: CombinedLoadStates) {
 
         val loading = states.source.refresh is LoadState.Loading
         this.loading.postValue(loading)
     }
+
     private fun getRecents() = viewModelScope.launch {
 
 
@@ -77,6 +76,8 @@ class SearchViewModel @Inject constructor(
     fun setQuery(query: ProductQuery) {
         this.query.postValue(query)
         getProducts()
+
+
     }
 }
 
