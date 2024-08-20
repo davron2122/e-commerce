@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding::inflate) {
 
-    j
+
 
     private val viewModel by viewModels<SignUpViewModel>()
 
@@ -41,11 +41,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
                 SignUpViewModel.Event.AlreadyRegistered -> toast(R.string.already_registered)
                 SignUpViewModel.Event.NavigateToHome -> toast(R.string.app_name)
             }
-
         }
     }
-
-
     private fun initUi() = with(binding) {
         //for clearStatusBar
         clearLightStatusBar()

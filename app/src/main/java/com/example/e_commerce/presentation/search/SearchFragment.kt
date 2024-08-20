@@ -1,4 +1,6 @@
 package com.example.e_commerce.presentation.search
 
-class SearchFragment {
+import com.example.e_commerce.util.BaseFragment
+
+class SearchFragment  : BaseFragment{
 }
