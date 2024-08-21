@@ -1,6 +1,4 @@
 package com.example.e_commerce.presentation.home
-
-
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -17,13 +15,13 @@ import com.example.e_commerce.data.api.product.dto.Product
 import com.example.e_commerce.data.api.product.dto.Section
 import com.example.e_commerce.databinding.FragmentHomeBinding
 import com.example.e_commerce.presentation.home.adapter.BannerAdapter
+import com.example.e_commerce.presentation.home.adapter.HomeCategoryAdapter
 import com.example.e_commerce.util.BaseFragment
 import com.example.e_commerce.util.HorizontalMarginItemDecoration
 import com.example.e_commerce.util.setLightStatusBar
 import com.zhpan.indicator.enums.IndicatorSlideMode
 import com.zhpan.indicator.enums.IndicatorStyle
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {

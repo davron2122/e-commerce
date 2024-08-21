@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="113dp"
         app:cardCornerRadius="14dp"
+        app:cardElevation="0dp"
         app:layout_constraintDimensionRatio="272:218"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardElevation="0dp"
         app:strokeColor="@color/gray_1"
         app:strokeWidth="1dp">
 
@@ -43,21 +43,20 @@
         android:text="@string/price"
         android:textColor="@color/dark"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/name"
         app:layout_constraintStart_toStartOf="parent"
-       />
+        app:layout_constraintTop_toBottomOf="@id/name" />
 
     <TextView
         android:id="@+id/old"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/regular"
         android:text="@string/price_striked"
         android:textColor="@color/soft_gray"
         android:textSize="16sp"
-        android:layout_marginTop="32dp"
         app:layout_constraintBaseline_toBaselineOf="@id/price"
-        app:layout_constraintStart_toEndOf="@id/price"
-        android:layout_marginStart="5dp"/>
+        app:layout_constraintStart_toEndOf="@id/price" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

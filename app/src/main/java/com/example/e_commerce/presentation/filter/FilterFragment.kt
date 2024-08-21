@@ -28,7 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class FilterFragment: BaseFragment<FragmentFilterBinding>(FragmentFilterBinding::inflate) {
 
     private val viewModel by viewModels<FilterViewModel>()
-    private val args by navArgs<FilterArgs>()
+    private val args by navArgs<FilterFragment>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

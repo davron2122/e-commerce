@@ -21,9 +21,9 @@
         android:fontFamily="@font/semi_bold"
         android:textColor="@color/dark"
         android:textSize="15sp"
-        app:layout_goneMarginStart="16dp"
         app:layout_constraintStart_toEndOf="@id/icon"
         app:layout_constraintTop_toTopOf="@id/icon"
+        app:layout_goneMarginStart="16dp"
         tools:text="@string/item_order_id" />
 
     <com.google.android.material.divider.MaterialDivider
@@ -44,9 +44,9 @@
         android:fontFamily="@font/medium"
         android:textColor="@color/soft_gray"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintStart_toStartOf="@id/title"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
         tools:text=" 19:10 , 30, April 2024 " />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
