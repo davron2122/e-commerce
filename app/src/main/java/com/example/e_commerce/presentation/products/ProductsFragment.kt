@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.e_commerce.databinding.FragmentProductsBinding
 import com.example.e_commerce.util.BaseFragment
 
 import dagger.hilt.android.AndroidEntryPoint
