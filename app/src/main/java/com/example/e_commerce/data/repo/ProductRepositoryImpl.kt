@@ -55,15 +55,16 @@ class ProductRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getProduct(id: String) = productApi.getProduct(id)
-    override suspend fun toggleWishlist(productId:String,wishlist:Boolean) {
-        productApi.toggleWishlist(productId,wishlist)
+    override suspend fun toggleWishlist(productId: String, wishlist: Boolean) {
+        productApi.toggleWishlist(productId, wishlist)
     }
+
     override suspend fun setCart(cart: Cart) {
         val carts = (cartStore.get() ?: emptyArray())
             .toList()
             .filterNot { it.id == cart.id }
             .toMutableList()
-        if (cart.count > 0){
+        if (cart.count > 0) {
             carts.add(cart)
         }
         cartStore.set(carts.toTypedArray())
@@ -72,7 +73,6 @@ class ProductRepositoryImpl @Inject constructor(
     override fun getCarts() = cartStore.getFlow().map { it?.toList() ?: emptyList() }
 
     override suspend fun clearCart() = cartStore.clear()
-
 
 
 }

@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation.findNavController
 import com.example.e_commerce.R
 import com.example.e_commerce.databinding.FragmentSignInBinding
 import com.example.e_commerce.util.BaseFragment
+import com.example.e_commerce.util.clearLightStatusBar
 import com.example.e_commerce.util.toast
 import dagger.hilt.android.AndroidEntryPoint
 

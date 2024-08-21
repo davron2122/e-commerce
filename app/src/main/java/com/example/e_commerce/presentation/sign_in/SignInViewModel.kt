@@ -14,14 +14,12 @@ import java.io.IOException
 import javax.inject.Inject
 
 
-
 @HiltViewModel
-class SignInViewModel @Inject constructor( private val authRepository: AuthRepository
+class SignInViewModel @Inject constructor(
+    private val authRepository: AuthRepository
 ) : ViewModel() {
     val loading = MutableLiveData(false)
     val events = SingleLiveEvent<Events>()
-
-    //
 
     fun signIn(username: String, password: String) = viewModelScope.launch(Dispatchers.IO) {
         try {
