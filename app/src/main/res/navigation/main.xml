@@ -177,7 +177,9 @@
     <fragment
         android:id="@+id/cardFragment"
         android:label="CardFragment"
-        tools:layout="@layout/fragment_cart">
+        tools:layout="@layout/fragment_cart"
+        android:name="car"
+        >
 
         <action
             android:id="@+id/to_detailFragment"
@@ -187,7 +189,8 @@
     <fragment
         android:id="@+id/wishlistFragment"
         android:label="WishlistFragment"
-        tools:layout="@layout/fragment_wishlist">
+        tools:layout="@layout/fragment_wishlist"
+        android:name="com.example.e_commerce.presentation.wishlist.WishlistFragment">
 
         <action
             android:id="@+id/to_detailFragment"
@@ -208,6 +211,6 @@
         android:id="@+id/profileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"
-        android:name="pro"
+        android:name="com.example.e_commerce.presentation.profile.ProfileFragment"
         />
 </navigation>
