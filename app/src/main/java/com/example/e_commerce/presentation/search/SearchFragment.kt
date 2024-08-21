@@ -23,10 +23,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class SearchFragment  : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate){
+class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate) {
     private val viewModel by viewModels<SearchViewModel>()
+
     //It's used to retrieve the arguments passed to the current fragment from the navigation graph.
-    private val args by navArgs <SearchFragmentArgs>()
+    private val args by navArgs<SearchFragmentArgs>()
     private val adapter by lazy { SearchProductsAdapter(this::onProductClick, this::like) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -98,8 +99,8 @@ class SearchFragment  : BaseFragment<FragmentSearchBinding>(FragmentSearchBindin
         }
         //get for the result
         setFragmentResultListener(FilterFragment.REQUEST_KEY) { _, result ->
-            val query = result.getParcelable < ProductQuery>(FilterFragment.RESULT_KEY)
-            viewModel.setQuery(query?: return@setFragmentResultListener)
+            val query = result.getParcelable<ProductQuery>(FilterFragment.RESULT_KEY)
+            viewModel.setQuery(query ?: return@setFragmentResultListener)
             searchContainer.search.clearFocus()
             hideKeyboard()
             isRecentsVisible(false)
