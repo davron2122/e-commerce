@@ -15,7 +15,6 @@ class ProductPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Product> {
         return try {
             val key = params.key ?: 0
-
             val products = productApi.getProducts(
                 categoryId = query.category?.id,
                 search = query.search,
