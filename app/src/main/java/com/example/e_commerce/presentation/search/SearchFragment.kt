@@ -50,7 +50,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
 
     private fun subscribeToLiveData() = with(binding) {
         viewModel.loading.observe(viewLifecycleOwner) {
-            loadingLayout.root.isVisible = it
+            loadinglayout.root.isVisible = it
         }
         viewModel.products.observe(viewLifecycleOwner) {
             viewLifecycleOwner.lifecycleScope.launch {

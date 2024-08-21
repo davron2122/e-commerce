@@ -3,8 +3,8 @@ package com.example.e_commerce.data.api.product.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.e_commerce.data.api.product.ProductApi
+import com.example.e_commerce.data.api.product.dto.Product
 import com.example.e_commerce.domain.model.ProductQuery
-import com.google.android.gms.analytics.ecommerce.Product
 
 class ProductPagingSource(
     private val productApi: ProductApi,

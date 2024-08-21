@@ -4,7 +4,6 @@ import com.example.e_commerce.domain.model.User
 import com.google.gson.annotations.SerializedName
 
 data class UserDto(
-
     @SerializedName("username")
     val username: String,
     @SerializedName("avatar")
@@ -16,9 +15,7 @@ data class UserDto(
     @SerializedName("lastName")
     val lastName: String?
 ) {
-
     // Converts this userDto object to a User object.
-
     fun toUser() = User(
         username = username,
         avatar = avatar,

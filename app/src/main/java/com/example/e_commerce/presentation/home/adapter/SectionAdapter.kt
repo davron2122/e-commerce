@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.e_commerce.data.api.product.dto.Product
 import com.example.e_commerce.data.api.product.dto.Section
 import com.example.e_commerce.data.api.product.dto.SectionType
+import com.example.e_commerce.databinding.ItemSectionHorizontalBinding
 import com.example.e_commerce.databinding.ItemSectionVerticalBinding
 
 class SectionAdapter(
@@ -14,7 +15,7 @@ class SectionAdapter(
     private val onClick: (product: Product) -> Unit,
     private val wishlist: (product:Product) -> Unit
 ) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-    inner class HorizontalHolder(private val binding:ItemSectionHorizontalBinding):RecyclerView.ViewHolder(binding.root){
+    inner class HorizontalHolder(private val binding: ItemSectionHorizontalBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(section: Section) = with(binding){
             title.text  =section.title
             showAll.setOnClickListener {
