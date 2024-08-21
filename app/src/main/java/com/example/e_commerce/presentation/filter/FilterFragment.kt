@@ -28,7 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class FilterFragment: BaseFragment<FragmentFilterBinding>(FragmentFilterBinding::inflate) {
 
     private val viewModel by viewModels<FilterViewModel>()
-    private val args by navArgs<FilterFragmentArgs>()
+    private val args by navArgs<FilterArgs>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -64,6 +64,10 @@ class FilterFragment: BaseFragment<FragmentFilterBinding>(FragmentFilterBinding:
             }
         }
     }
+
+    // when we catch the data we rarely think about the unchecks and cheekiness
+
+    // we would go with the binding and we create categories
 
     private fun initUi()  = with(binding){
         close.setOnClickListener {

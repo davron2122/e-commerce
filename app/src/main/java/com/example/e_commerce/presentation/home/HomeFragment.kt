@@ -6,10 +6,15 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.example.e_commerce.R
+import com.example.e_commerce.data.api.product.dto.Banner
+import com.example.e_commerce.data.api.product.dto.Category
+import com.example.e_commerce.data.api.product.dto.Product
+import com.example.e_commerce.data.api.product.dto.Section
 import com.example.e_commerce.databinding.FragmentHomeBinding
 import com.example.e_commerce.presentation.home.adapter.BannerAdapter
 import com.example.e_commerce.util.BaseFragment
@@ -106,13 +111,40 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 setPageSize(it.banners.size)
                 notifyDataChanged()
             }
+
+            categories.adapter =
+                HomeCategoryAdapter(it.categories, this@HomeFragment::onCategoryClick)
+
+            sections.adapter = SectionAdapter(
+                it.sections,
+                this@HomeFragment::showAll,
+                this@HomeFragment::onClickProduct,
+                this@HomeFragment::wishlist
+            )
+            count.text = it.notificationCount.toString()
         }
     }
 
-    private fun onBannerClick(banner: BannerOnclick) {
+    private fun onBannerClick(banner: Banner) {
 
     }
 
+    private fun onCategoryClick(category: Category) {
+        findNavController().navigate(HomeFragmentDirections.toProductsFragment(category))
+    }
+
+    private fun showAll(section: Section) {
+
+    }
+
+    private fun onClickProduct(product: Product) {
+        findNavController().navigate(HomeFragmentDirections.toDetailFragment(product.id))
+    }
+
+    private fun wishlist(product: Product) {
+        viewModel.toggleWishlist(product)
+    }
 }
+
 
 

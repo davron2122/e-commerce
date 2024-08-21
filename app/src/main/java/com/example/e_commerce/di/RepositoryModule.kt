@@ -1,6 +1,8 @@
 package com.example.e_commerce.di
 
 
+import com.example.e_commerce.data.repo.AuthRepositoryImpl
+import com.example.e_commerce.data.repo.OrderRepositoryImpl
 import com.example.e_commerce.data.repo.ProductRepositoryImpl
 import com.example.e_commerce.domain.repo.AuthRepository
 import com.example.e_commerce.domain.repo.OrderRepository

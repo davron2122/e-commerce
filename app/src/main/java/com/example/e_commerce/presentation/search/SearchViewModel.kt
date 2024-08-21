@@ -51,11 +51,7 @@ class SearchViewModel @Inject constructor(
     }
 
     //CombinedLoadStates object as parameter, representing the combined loading states of different data sources.
-    fun setLoadsState(states: CombinedLoadStates) {
 
-        val loading = states.source.refresh is LoadState.Loading
-        this.loading.postValue(loading)
-    }
 
     private fun getRecents() = viewModelScope.launch {
 
@@ -80,4 +76,11 @@ class SearchViewModel @Inject constructor(
         getProducts()
 
     }
+
+    fun setLoadState(states: CombinedLoadStates) {
+        val loading = states.source.refresh is LoadState.Loading
+        this.loading.postValue(loading)
+
+    }
 }
+

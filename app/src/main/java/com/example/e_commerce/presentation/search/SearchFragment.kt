@@ -14,6 +14,7 @@ import androidx.paging.PagingData
 import com.example.e_commerce.data.api.product.dto.Product
 import com.example.e_commerce.databinding.FragmentSearchBinding
 import com.example.e_commerce.domain.model.ProductQuery
+import com.example.e_commerce.presentation.filter.FilterFragment
 import com.example.e_commerce.presentation.search.adapters.RecentAdapter
 import com.example.e_commerce.presentation.search.adapters.SearchProductsAdapter
 import com.example.e_commerce.util.BaseFragment
