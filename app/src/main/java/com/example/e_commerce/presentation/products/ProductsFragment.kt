@@ -15,16 +15,16 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProductsFragment: BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate) {
+class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate) {
 
     private val viewModel by viewModels<ProductViewModel>()
 
-    private val args by navArgs <ProductsFragmentArgs>()
+    private val args by navArgs<ProductsFragmentArgs>()
 
 
     //use when we need it
     private val adapter by lazy {
-        ProductsAdapter(this::onClick,this::wishlist)
+        ProductsAdapter(this::onClick, this::wishlist)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,18 +46,18 @@ class ProductsFragment: BaseFragment<FragmentProductsBinding>(FragmentProductsBi
     }
 
     private fun subscribeToLiveData() = with(binding) {
-        viewModel.loading.observe(viewLifecycleOwner){
+        viewModel.loading.observe(viewLifecycleOwner) {
             loading.root.isVisible = it
         }
-        viewModel.error.observe(viewLifecycleOwner){
+        viewModel.error.observe(viewLifecycleOwner) {
             error.root.isVisible = it
         }
-        viewModel.products.observe(viewLifecycleOwner){
+        viewModel.products.observe(viewLifecycleOwner) {
             viewLifecycleOwner.lifecycleScope.launch {
                 adapter.submitData(it)
             }
         }
-        viewModel.category.observe(viewLifecycleOwner){
+        viewModel.category.observe(viewLifecycleOwner) {
             title.text = it.title
         }
     }
@@ -72,10 +72,11 @@ class ProductsFragment: BaseFragment<FragmentProductsBinding>(FragmentProductsBi
         products.adapter = adapter
     }
 
-    private fun onClick(product: Product){
+    private fun onClick(product: Product) {
         findNavController().navigate(ProductsFragmentDirections.toDetailFragment(product.id))
     }
-    private fun wishlist(product:Product){
+
+    private fun wishlist(product: Product) {
         viewModel.toggleWishlist(product)
     }
 }

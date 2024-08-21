@@ -33,6 +33,7 @@ class SearchViewModel @Inject constructor(
     init {
         getRecents()
     }
+
     private fun getProducts() = viewModelScope.launch {
         productRepository.getProducts(query.value!!).cachedIn(viewModelScope).collect {
             products.postValue(it)
@@ -61,9 +62,6 @@ class SearchViewModel @Inject constructor(
         }
     }
 
-    fun clearRecent() = viewModelScope.launch {
-        productRepository.clearRecents()
-    }
 
     private fun addRecent(search: String) = viewModelScope.launch {
         productRepository.addRecents(search)
@@ -81,6 +79,10 @@ class SearchViewModel @Inject constructor(
         val loading = states.source.refresh is LoadState.Loading
         this.loading.postValue(loading)
 
+    }
+
+    fun clearRecents() = viewModelScope.launch {
+        productRepository.clearRecents()
     }
 }
 

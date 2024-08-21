@@ -16,7 +16,6 @@
         app:layout_constraintBottom_toTopOf="@id/navigation"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
-    <!--        app:layout_constraintBottom_toTopOf="@+id/navigation/main"/>-->
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider"
@@ -25,6 +24,7 @@
         app:layout_constraintBottom_toTopOf="@+id/navigation"
 
         />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"

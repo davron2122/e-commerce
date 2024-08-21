@@ -28,7 +28,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
     private val viewModel by viewModels<SearchViewModel>()
 
     //It's used to retrieve the arguments passed to the current fragment from the navigation graph.
-    private val args by navArgs <SearchFragmentArgs>()
+    private val args by navArgs<SearchFragmentArgs>()
     private val adapter by lazy { SearchProductsAdapter(this::onProductClick, this::like) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +50,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
 
     private fun subscribeToLiveData() = with(binding) {
         viewModel.loading.observe(viewLifecycleOwner) {
-            loadinglayout.root.isVisible = it
+            loadingLayout.root.isVisible = it
         }
         viewModel.products.observe(viewLifecycleOwner) {
             viewLifecycleOwner.lifecycleScope.launch {
@@ -96,7 +96,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         }
         searchContainer.filter.setOnClickListener {
             val query = viewModel.query.value ?: ProductQuery()
-            findNavController().navigate(toFilter(query))
+            findNavController().navigate(toFilterFragment(query))
         }
         //get for the result
         setFragmentResultListener(FilterFragment.REQUEST_KEY) { _, result ->

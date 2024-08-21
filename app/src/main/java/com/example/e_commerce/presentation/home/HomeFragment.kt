@@ -16,6 +16,7 @@ import com.example.e_commerce.data.api.product.dto.Section
 import com.example.e_commerce.databinding.FragmentHomeBinding
 import com.example.e_commerce.presentation.home.adapter.BannerAdapter
 import com.example.e_commerce.presentation.home.adapter.HomeCategoryAdapter
+import com.example.e_commerce.presentation.home.adapter.SectionAdapter
 import com.example.e_commerce.util.BaseFragment
 import com.example.e_commerce.util.HorizontalMarginItemDecoration
 import com.example.e_commerce.util.setLightStatusBar
@@ -142,7 +143,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private fun wishlist(product: Product) {
         viewModel.toggleWishlist(product)
     }
+
+    companion object
 }
+
 
 
 
