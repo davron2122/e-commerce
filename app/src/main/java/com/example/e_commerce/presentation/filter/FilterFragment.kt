@@ -13,7 +13,12 @@ import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.e_commerce.R
+import com.example.e_commerce.data.api.product.dto.Category
 import com.example.e_commerce.databinding.FragmentFilterBinding
+import com.example.e_commerce.databinding.ItemRadioGroupBinding
+import com.example.e_commerce.domain.model.ProductQuery
+import com.example.e_commerce.domain.model.Sort
 import com.example.e_commerce.util.BaseFragment
 import com.google.android.material.snackbar.Snackbar
 
@@ -72,14 +77,14 @@ class FilterFragment: BaseFragment<FragmentFilterBinding>(FragmentFilterBinding:
         filter.discount?.let {
             (discountGroup.getChildAt(it) as RadioButton).isChecked = true
         }
-        discountSort.isChecked = filter.sort.contains(Sort.disconunt)
+        discountSort.isChecked = filter.sort.contains(Sort.discount)
         voucherSort.isChecked = filter.sort.contains(Sort.voucher)
         deliverySort.isChecked =  filter.sort.contains(Sort.delivery)
         shippingSort.isChecked =  filter.sort.contains(Sort.shipping)
 
         apply.setOnClickListener {
             val sort = mutableListOf<Sort>()
-            if (discountSort.isChecked) sort.add(Sort.disconunt)
+            if (discountSort.isChecked) sort.add(Sort.discount)
             if (shippingSort.isChecked) sort.add(Sort.shipping)
             if (voucherSort.isChecked) sort.add(Sort.voucher)
             if (deliverySort.isChecked) sort.add(Sort.delivery)
