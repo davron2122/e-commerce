@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.e_commerce.data.api.product.dto.Product
 import com.example.e_commerce.databinding.FragmentProductsBinding
 import com.example.e_commerce.util.BaseFragment
 
@@ -68,7 +69,7 @@ class ProductsFragment: BaseFragment<FragmentProductsBinding>(FragmentProductsBi
         products.adapter = adapter
     }
 
-    private fun onClick(product:Product){
+    private fun onClick(product: Product){
         findNavController().navigate(ProductsFragmentDirections.toDetailFragment(product.id))
     }
     private fun wishlist(product:Product){

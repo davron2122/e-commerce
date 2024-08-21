@@ -4,6 +4,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.example.e_commerce.data.api.product.dto.Product
+import com.example.e_commerce.databinding.ItemProductBinding
 
 class ProductsAdapter(
     private val onClick:(product: Product) -> Unit,
