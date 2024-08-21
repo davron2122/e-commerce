@@ -100,7 +100,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             Glide.with(root).load(it.user.avatar).into(avatar)
 
             //when we create the the fragment it can take the several steps
-
             banners.adapter = BannerAdapter(it.banners, this@HomeFragment::onBannerClick)
             indicator.setupWithViewPager(banners)
             indicator.apply {
@@ -108,7 +107,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 notifyDataChanged()
             }
         }
-
     }
 
     private fun onBannerClick(banner: BannerOnclick) {

@@ -14,11 +14,12 @@ import androidx.paging.PagingData
 import com.example.e_commerce.data.api.product.dto.Product
 import com.example.e_commerce.databinding.FragmentSearchBinding
 import com.example.e_commerce.domain.model.ProductQuery
+import com.example.e_commerce.presentation.search.adapters.RecentAdapter
+import com.example.e_commerce.presentation.search.adapters.SearchProductsAdapter
 import com.example.e_commerce.util.BaseFragment
 import com.example.e_commerce.util.hideKeyboard
 import com.example.e_commerce.util.showKeyboard
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.navigation.fragment.navArgs
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
