@@ -2,7 +2,8 @@ package com.example.e_commerce.util
 
 import android.app.Activity
 import android.content.Context
-import android.content.res.Resources
+
+import android.content.res.Resources.getSystem
 import android.os.Build
 import android.view.View
 import android.view.WindowInsetsController
@@ -61,4 +62,4 @@ fun Context.showKeyboard(view: View) {
     inputMethodManager.showSoftInput(view, 0)
 }
 
-val Int.dp :Int get() = (this * Resources.getSystem().displayMetrics.density).toInt()
+val Int.dp :Int get() = (this * getSystem().displayMetrics.density).toInt()

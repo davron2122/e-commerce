@@ -19,7 +19,7 @@ class SignInViewModel @Inject constructor(
     private val authRepository: AuthRepository
 ) : ViewModel() {
     val loading = MutableLiveData(false)
-    val events = SingleLiveEvent<Events>()
+    val events = SingleLiveEvent<Event>()
 
     fun signIn(username: String, password: String) = viewModelScope.launch(Dispatchers.IO) {
         try {

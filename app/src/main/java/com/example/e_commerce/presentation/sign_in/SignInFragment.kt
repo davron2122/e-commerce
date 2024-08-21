@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.e_commerce.R
 import com.example.e_commerce.databinding.FragmentSignInBinding
 import com.example.e_commerce.util.BaseFragment
@@ -40,7 +41,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
     }
 
     private fun initUi() = with(binding) {
-        //for clearLighStatusBar
+
+        //for clearLightStatusBar
         clearLightStatusBar()
 
         singInBtn.setOnClickListener {
@@ -50,10 +52,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
         singUp.setOnClickListener {
             findNavController().navigate(SignInFragmentDirections.toSignUpFragment())
 
+            //
         }
     }
-}
-
-
-
 }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.e_commerce.R
 import com.example.e_commerce.databinding.FragmentSignUpBinding
@@ -61,3 +62,6 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
 
     }
 }
+
+
+

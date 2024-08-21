@@ -96,7 +96,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         }
         searchContainer.filter.setOnClickListener {
             val query = viewModel.query.value ?: ProductQuery()
-            findNavController().navigate(toFilterFragment(query))
+            findNavController().navigate(toFilter(query))
         }
         //get for the result
         setFragmentResultListener(FilterFragment.REQUEST_KEY) { _, result ->
