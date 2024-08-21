@@ -1,7 +1,4 @@
 package com.example.e_commerce.presentation.products
-
-import androidx.datastore.preferences.core.preferencesOf
-import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
