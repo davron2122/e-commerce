@@ -16,8 +16,11 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProductsFragment: BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate) {
+
     private val viewModel by viewModels<ProductViewModel>()
+
     private val args by navArgs <ProductsFragmentArgs>()
+
 
     //use when we need it
     private val adapter by lazy {

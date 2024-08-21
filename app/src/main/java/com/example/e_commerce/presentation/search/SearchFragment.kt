@@ -28,7 +28,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
     private val viewModel by viewModels<SearchViewModel>()
 
     //It's used to retrieve the arguments passed to the current fragment from the navigation graph.
-    private val args by navArgs<SearchFragmentArgs>()
+    private val args by navArgs <SearchFragmentArgs>()
     private val adapter by lazy { SearchProductsAdapter(this::onProductClick, this::like) }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.onboardingFragment,
                 R.id.signInFragment,
                 R.id.signUpFragment,
-                //     R.id.detailFragment,
+                R.id.detailFragment,
             ).all { it != destination.id }
         }
     }
@@ -89,6 +89,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun navigateTo(destination: Destination) {
+        if (navController.currentDestination?.id == R.id.detailFragment) return
+        when (destination) {
+            Destination.Auth -> navController.navigate(MainDirections.tooSignInFragment())
+            Destination.Home -> navController.navigate(MainDirections.toHomeFragment())
+            Destination.Onboarding -> navController.navigate(MainDirections.toOnboardingFragment())
+        }
+    }
+
+}
 
 
     private fun navigateTo(destination: Destination) {

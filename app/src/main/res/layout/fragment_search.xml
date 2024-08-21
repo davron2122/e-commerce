@@ -92,8 +92,7 @@
         android:textColor="@color/dark"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@+id/close"
-        app:layout_constraintTop_toTopOf=""
-        />
+        app:layout_constraintTop_toTopOf="" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

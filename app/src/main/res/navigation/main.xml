@@ -207,5 +207,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile"
+        android:name="pro"
+        />
 </navigation>
