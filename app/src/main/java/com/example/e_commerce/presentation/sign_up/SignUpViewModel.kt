@@ -27,19 +27,19 @@ class SignUpViewModel @Inject constructor(
             try {
                 authRepository.signUp(username, email, password)
                 events.postValue(Event.NavigateToHome)
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 when {
                     e is HttpException && e.code() == 401 -> events.postValue(Event.AlreadyRegistered)
                     e is IOException -> events.postValue(Event.ConnectionError)
                     else -> events.postValue(Event.Error)
                 }
-            }
-            finally {
+            } finally {
                 loading.postValue(false)
             }
 
         }
     }
+
     sealed class Event {
         object AlreadyRegistered : Event()
         object ConnectionError : Event()

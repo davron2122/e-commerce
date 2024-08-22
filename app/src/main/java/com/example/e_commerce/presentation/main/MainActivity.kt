@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<MainViewModel>()
 
-
     private lateinit var binding: ActivityMainBinding
     private val navController get() = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun navigateTo(destination: Destination) {
         if (navController.currentDestination?.id == R.id.detailFragment) return
         when (destination) {
@@ -102,7 +102,5 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-    private fun navigateTo(destination: Destination) {
-//
-    }
-}
+
+

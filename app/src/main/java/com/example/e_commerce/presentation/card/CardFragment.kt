@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.e_commerce.R
 import com.example.e_commerce.databinding.FragmentCartBinding
+import com.example.e_commerce.domain.model.Cart
 import com.example.e_commerce.util.BaseFragment
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint

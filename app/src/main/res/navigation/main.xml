@@ -5,9 +5,10 @@
     android:id="@+id/main"
     app:startDestination="@id/homeFragment">
 
+
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.e_commerce.presentation.sign_in.SignInFragment"
+       android:name="com.example.e_commerce.presentation.sign_in.SignInFragment"
         android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in">
 
@@ -23,8 +24,6 @@
         android:name="com.example.e_commerce.presentation.onboarding.OnboardingFragment"
         android:label="fragment_onboarding"
         tools:layout="@layout/fragment_onboarding">
-
-
         <action
             android:id="@+id/to_signInFragment"
             app:destination="@id/signInFragment" />
@@ -55,8 +54,8 @@
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.example.e_commerce.presentation.categories.CategoriesFragment"
-        android:label=""
-        tools:layout="@layout/fragment_products">
+        android:label="CategoriesFragment"
+        tools:layout="@layout/fragment_categories">
 
         <action
             android:id="@+id/to_productsFragment"
@@ -74,7 +73,7 @@
 
         <argument
             android:name="category"
-            app:argType="com.example.e_commerce.data.api.product.dto.Category" />
+            app:argType="com.oybekdev.e_commerce.data.api.product.dto.Category" />
 
         <action
             android:id="@+id/to_searchFragment"
@@ -93,7 +92,7 @@
         <argument
             android:name="category"
             android:defaultValue="@null"
-            app:argType="com.example.e_commerce.data.api.product.dto.Category"
+            app:argType="com.oybekdev.e_commerce.data.api.product.dto.Category"
             app:nullable="true" />
 
         <argument
@@ -141,16 +140,18 @@
 
     <fragment
         android:id="@+id/filterFragment"
+        android:name="com.example.e_commerce.presentation.filter.FilterFragment"
         android:label="FilterFragment"
         tools:layout="@layout/fragment_filter">
 
         <argument
             android:name="filter"
-            app:argType="com.example.e_commerce.domain.model.ProductQuery" />
+            app:argType="com.oybekdev.e_commerce.domain.model.ProductQuery" />
     </fragment>
 
     <fragment
         android:id="@+id/detailFragment"
+        android:name="com.example.e_commerce.presentation.detail.DetailFragment"
         android:label="DetailFragment"
         tools:layout="@layout/fragment_detail">
 
@@ -170,16 +171,16 @@
 
     <fragment
         android:id="@+id/ordersFragment"
+        android:name="com.example.e_commerce.presentation.orders.OrdersFragment"
         android:label="OrdersFragment"
         tools:layout="@layout/fragment_orders" />
 
 
     <fragment
         android:id="@+id/cardFragment"
+        android:name="com.example.e_commerce.presentation.card.CardFragment"
         android:label="CardFragment"
-        tools:layout="@layout/fragment_cart"
-        android:name="car"
-        >
+        tools:layout="@layout/fragment_cart">
 
         <action
             android:id="@+id/to_detailFragment"
@@ -188,9 +189,9 @@
 
     <fragment
         android:id="@+id/wishlistFragment"
+        android:name="com.example.e_commerce.presentation.wishlist.WishlistFragment"
         android:label="WishlistFragment"
-        tools:layout="@layout/fragment_wishlist"
-        android:name="com.example.e_commerce.presentation.wishlist.WishlistFragment">
+        tools:layout="@layout/fragment_wishlist">
 
         <action
             android:id="@+id/to_detailFragment"
@@ -209,8 +210,8 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"
         android:name="com.example.e_commerce.presentation.profile.ProfileFragment"
-        />
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
 </navigation>

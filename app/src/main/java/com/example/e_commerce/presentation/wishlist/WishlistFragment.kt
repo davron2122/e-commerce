@@ -20,7 +20,7 @@ class WishlistFragment : BaseFragment<FragmentWishlistBinding>(FragmentWishlistB
     private val viewModel by viewModels<WishlistViewModel>()
 
     //use when we need it
-    private val adapter by lazy {
+    private val adapter by lazy{
         ProductsAdapter(this::onClick, this::like)
     }
 
@@ -30,6 +30,8 @@ class WishlistFragment : BaseFragment<FragmentWishlistBinding>(FragmentWishlistB
         adapter.addLoadStateListener {
             viewModel.setLoadStates(it)
         }
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

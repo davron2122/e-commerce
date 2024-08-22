@@ -54,14 +54,13 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
             )
         }
         signIn.setOnClickListener {
-            findNavController().navigate()
+            findNavController().navigate(SignUpFragmentDirections.signInFragment())
+        }
 
         }
 
 
     }
-}
-
 
 
 

@@ -23,7 +23,6 @@ abstract class BaseFragment<V : ViewBinding>(
     private val inflate: Inflate<V>,
 ) : Fragment() {
 
-
     private lateinit var _binding: V
     val binding get() = _binding
 

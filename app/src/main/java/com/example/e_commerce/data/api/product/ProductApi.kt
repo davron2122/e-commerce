@@ -3,7 +3,7 @@ package com.example.e_commerce.data.api.product
 import com.example.e_commerce.data.api.product.dto.Category
 import com.example.e_commerce.data.api.product.dto.Detail
 import com.example.e_commerce.data.api.product.dto.HomeResponse
-import com.google.android.gms.analytics.ecommerce.Product
+import com.example.e_commerce.data.api.product.dto.Product
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

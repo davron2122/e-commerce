@@ -67,7 +67,8 @@ class OnboardingFragment :
 
         next.setOnClickListener {
             if (pager.currentItem == adapter.itemCount - 1) { //
-                viewModel.onboarded()    findNavController().navigate(OnboardingFragmentDirections.toSignInFragment())    findNavController().navigate(OnboardingFragment.)
+                viewModel.onboarded()
+                findNavController().navigate(OnboardingFragmentDirections.toSignInFragment())
             } else {
                 pager.setCurrentItem(pager.currentItem + 1, true)
             }
