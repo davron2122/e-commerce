@@ -1,5 +1,6 @@
 package com.example.e_commerce.domain.model
 
+import android.os.Parcel
 import android.os.Parcelable
 import com.example.e_commerce.data.api.product.dto.Category
 import kotlinx.parcelize.Parcelize

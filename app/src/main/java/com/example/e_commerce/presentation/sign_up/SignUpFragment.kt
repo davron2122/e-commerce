@@ -40,8 +40,6 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
                 SignUpViewModel.Event.NavigateToHome -> toast(R.string.app_name)
             }
         }
-
-        // we would prefer not to use them because of the world authentis ification and
     }
 
     private fun initUi() = with(binding) {
@@ -55,8 +53,9 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
                 password.text.toString()
             )
         }
-        singIn.setOnClickListener {
+        signIn.setOnClickListener {
             findNavController().navigate()
+
         }
 
 

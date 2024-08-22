@@ -40,6 +40,8 @@ class SearchViewModel @Inject constructor(
         }
     }
 
+    // get Products by view model is not enough way for it OrdersFragment and viewModelScope products. query
+
     fun setInitials(category: Category?, wishlist: Boolean) {
         query.postValue(query.value!!.copy(category = category, favorite = wishlist))
         getProducts()
